@@ -18,29 +18,69 @@ creatingGrid ();
 
 
 // create a div within 1 li
-$("li").eq(0).append("<div class='playerAtom'></div>")
+$("li").eq(0).append("<div class='playerAtom'></div>");
 
 
-// right check function for playerAtom below function works for 9
-// function rightCheck (position) {
-// 	if (position < 9) {
-// 		return true;
-// 	}else if (position === 9) {
-// 		return false;
-// 	}
-// };
 
+// up check function
+function upCheck (position) {
+	var cantGoUp = [0,1,2,3,4,5,6,7,8,9];
 
+	if (cantGoUp.indexOf(position) === -1) {
+		return true;
+
+	}else {
+		return false;
+	}
+};
+// up check function end
+
+// down check function
+function downCheck (position) {
+	var cantGoDown = [90,91,92,93,94,95,96,97,98,99];
+
+	if (cantGoDown.indexOf(position) === -1) {
+		return true;
+
+	}else {
+		return false;
+	}
+};
+// down check function end
+
+// right check function
 function rightCheck (position) {
-	var cantGoRight = [9,19,29,39,49,59,69,79,89,99]
+	var cantGoRight = [9,19,29,39,49,59,69,79,89,99];
 
 	if (cantGoRight.indexOf(position) === -1) {
+		return true;
+
+	}else {
+		return false;
+	}
+};
+// right check function end
+
+// left check function
+function leftCheck (position) {
+	var cantGoLeft = [0,10,20,30,40,50,60,70,80,90];
+
+	if (cantGoLeft.indexOf(position) === -1) {
 		return true;
 	}else {
 		return false;
 	}
 };
+// left check function end
 
+
+
+
+// move the atom to the right function
+// function atomRight (position) {
+// 	$("li").eq(position).empty();
+// 	$("li").eq(position).append("<div class='playerAtom'></div>")
+// }
 
 
 
@@ -52,27 +92,39 @@ $("#startGame").one("click", function() {
 
 
 
-var blocksPerRow = 10;
 var position = 0;
 
 $("body").on("keydown", function(e){
 
+// for the atom to go up
     if(e.keyCode === 38) {
-       console.log("it went up!");
-       position = position - blocksPerRow;
-       $(".playerAtom").show();
-    }else if (e.keyCode === 40) {
-        console.log("it went down");
-        position = position + blocksPerRow;       
-    }else if (e.keyCode === 39) {
-    	if (rightCheck(position)) position++;
-    	console.log(position);
-    }else if (e.keyCode === 37) {
-    	console.log("it went left bruh");
-    	position = position - 1; 
+    	$("li").eq(position).empty();
+    	if (upCheck(position)) {
+    		position -= 10;
+    	}
+    	$("li").eq(position).append("<div class='playerAtom'></div>");
+      // console.log(position);
     }
-    if(position !== null) { 
-        $(".test").eq(position).addClass("selected").siblings().removeClass("selected");   
+    else if (e.keyCode === 40) {
+    	$("li").eq(position).empty();
+    	if (downCheck(position)) {
+    		position += 10;
+    	}
+    	$("li").eq(position).append("<div class='playerAtom'></div>");
+      // console.log(position);      
+    }
+    else if (e.keyCode === 39) {
+    	$("li").eq(position).empty();
+    	if (rightCheck(position)) position++;
+    	// atomRight(position);
+    	$("li").eq(position).append("<div class='playerAtom'></div>");
+    	// console.log(position);
+    }
+    else if (e.keyCode === 37) {
+    	$("li").eq(position).empty();
+    	if (leftCheck(position)) position--;
+    	$("li").eq(position).append("<div class='playerAtom'></div>");
+    	// console.log(position);
     }    
  });
 
