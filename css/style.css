@@ -4,6 +4,50 @@ body {
 	font: 200 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+/* edit the bootstrap cards here*/
+.cards {
+	margin-top: 10px;
+	border-radius: 40px;
+}
+
+/* edit the startgame button here*/
 #startGame {
 	float: right;
+}
+
+/*edit game heading in here*/
+#gameHeading {
+	margin: 20px auto;
+}
+
+/* edit the game domain in here*/
+.gameDomain {
+    width: 600px;
+    height: 600px;
+    margin: 50px auto;
+    border: 2px solid black;
+    padding: 0;
+    background-color: #24e273;
+    border-radius: 10px;
+}
+
+li {
+    box-sizing: border-box;
+    height: 59.6px;
+    width: 59.6px;
+    display: inline-block;
+    float: left;
+    border: 1px solid black;
+    list-style-type: none;
+	
+}
+
+/*edit the playerAtom in here*/
+
+.playerAtom {
+	width: 5px;
+	height: 5px;
+	border: 5px solid black;
+	border-radius: 100%;
+	margin: 0 auto;
 }
