@@ -1,0 +1,9 @@
+body {
+	width: 100vw;
+	height: 100vh;
+	font: 200 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#startGame {
+	float: right;
+}
