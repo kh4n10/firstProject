@@ -1,10 +1,15 @@
 $(function() {
-	console.log("does this work");
+	// console.log("does this work");
 
 // hide the game at the start, so displays instructions first
-$(".gameDomain, #gameHeading, li, .playerAtom").hide();
+$(".gameDomain, #gameHeading, li, .playerAtom, #timer").hide();
 
-
+// this one click function allows user to start the game and then hides the instructions and displays the game
+$("#startGame").one("click", function() {
+	$(".cards, #startGame, .playerAtom").hide();
+	$(".gameDomain, #gameHeading, li, .playerAtom, #timer").show();
+});
+// end of one click
 
 // function to create the gaming board
 function creatingGrid () {
@@ -15,6 +20,26 @@ function creatingGrid () {
 
 creatingGrid ();
 // function end
+
+// setting a timer
+// if ($("#startGame") === "click") {
+	function timer () {
+	
+	  var updateTimer = function() {
+	    $('#timer').each(function() {
+	      var count = parseInt($(this).html());
+	      if (count !== 0) {
+	        $(this).html(count - 1);
+	      }
+	    });
+	  };
+	
+	  setInterval(updateTimer, 1000);
+	};
+timer ();
+// }
+
+// timer end
 
 
 // create a div within 1 li
@@ -28,7 +53,6 @@ function upCheck (position) {
 
 	if (cantGoUp.indexOf(position) === -1) {
 		return true;
-
 	}else {
 		return false;
 	}
@@ -41,7 +65,6 @@ function downCheck (position) {
 
 	if (cantGoDown.indexOf(position) === -1) {
 		return true;
-
 	}else {
 		return false;
 	}
@@ -54,7 +77,6 @@ function rightCheck (position) {
 
 	if (cantGoRight.indexOf(position) === -1) {
 		return true;
-
 	}else {
 		return false;
 	}
@@ -74,29 +96,30 @@ function leftCheck (position) {
 // left check function end
 
 
-
-
-// move the atom to the right function
-// function atomRight (position) {
-// 	$("li").eq(position).empty();
-// 	$("li").eq(position).append("<div class='playerAtom'></div>")
+// move the atom around function
+// function atomNavigation (position) {
+// 		$("li").eq(position).empty();
+	// if (upCheck(position)) {
+ //    		position -= 10;
+ //  }
+ //  else if (downCheck(position)) {
+ //    		position += 10;
+ //  }
+ //  else if (rightCheck(position)) {
+ //  	position++;
+ //  }
+ //  else if (leftCheck(position)) {
+ //  	position--;
+ //  }
+ //  $("li").eq(position).append("<div class='playerAtom'></div>");
 // }
 
 
-
-// this one click function allows user to start the game and then hides the instructions and displays the game
-$("#startGame").one("click", function() {
-	$(".cards, #startGame, .playerAtom").hide();
-	$(".gameDomain, #gameHeading, li, .playerAtom").show();
-});
-
-
-
+// allows the navigation of the atom using keyboard
 var position = 0;
 
 $("body").on("keydown", function(e){
 
-// for the atom to go up
     if(e.keyCode === 38) {
     	$("li").eq(position).empty();
     	if (upCheck(position)) {
@@ -115,8 +138,8 @@ $("body").on("keydown", function(e){
     }
     else if (e.keyCode === 39) {
     	$("li").eq(position).empty();
-    	if (rightCheck(position)) position++;
     	// atomRight(position);
+    	if (rightCheck(position)) position++;
     	$("li").eq(position).append("<div class='playerAtom'></div>");
     	// console.log(position);
     }
@@ -127,6 +150,7 @@ $("body").on("keydown", function(e){
     	// console.log(position);
     }    
  });
+// navigation end
 
 
 
