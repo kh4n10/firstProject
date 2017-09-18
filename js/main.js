@@ -18,11 +18,28 @@ creatingGrid ();
 
 
 // create a div within 1 li
-$("li").eq(0).append("<div class='playerAtom'></div>");
+$("li").eq(0).append("<div class='playerAtom'></div>")
 
 
-// then when playerAtom moves, remove from current li to the designated li?
+// right check function for playerAtom below function works for 9
+// function rightCheck (position) {
+// 	if (position < 9) {
+// 		return true;
+// 	}else if (position === 9) {
+// 		return false;
+// 	}
+// };
 
+
+function rightCheck (position) {
+	var cantGoRight = [9,19,29,39,49,59,69,79,89,99]
+
+	if (cantGoRight.indexOf(position) === -1) {
+		return true;
+	}else {
+		return false;
+	}
+};
 
 
 
@@ -36,29 +53,27 @@ $("#startGame").one("click", function() {
 
 
 var blocksPerRow = 10;
+var position = 0;
 
 $("body").on("keydown", function(e){
 
-    var thisIndex = $(".selected").index();
-    var newIndex = 0;
-
     if(e.keyCode === 38) {
        console.log("it went up!");
-       newIndex = thisIndex - blocksPerRow;
+       position = position - blocksPerRow;
        $(".playerAtom").show();
     }else if (e.keyCode === 40) {
         console.log("it went down");
-        newIndex = thisIndex + blocksPerRow;       
+        position = position + blocksPerRow;       
     }else if (e.keyCode === 39) {
-    	console.log("it went right");
-    	newIndex = thisIndex + 1;
+    	if (rightCheck(position)) position++;
+    	console.log(position);
     }else if (e.keyCode === 37) {
     	console.log("it went left bruh");
-    	newIndex = thisIndex - 1; 
+    	position = position - 1; 
     }
-//     if(newIndex !== null) { 
-//         $(".test").eq(newIndex).addClass("selected").siblings().removeClass("selected");   
-//     }    
+    if(position !== null) { 
+        $(".test").eq(position).addClass("selected").siblings().removeClass("selected");   
+    }    
  });
 
 
