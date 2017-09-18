@@ -14,46 +14,52 @@ function creatingGrid () {
 };
 
 creatingGrid ();
-
 // function end
 
 
- // <div class='playerAtom'></div> 
+// create a div within 1 li
+$("li").eq(0).append("<div class='playerAtom'></div>");
+
+
+// then when playerAtom moves, remove from current li to the designated li?
+
+
+
 
 
 // this one click function allows user to start the game and then hides the instructions and displays the game
 $("#startGame").one("click", function() {
 	$(".cards, #startGame, .playerAtom").hide();
-	$(".gameDomain, #gameHeading, li").show();
+	$(".gameDomain, #gameHeading, li, .playerAtom").show();
 });
 
 
 
-// var blocksPerRow = 10;
+var blocksPerRow = 10;
 
-// $("body").on("keydown", function(e){
+$("body").on("keydown", function(e){
 
-//     var thisIndex = $(".selected").index();
-//     var newIndex = null;
+    var thisIndex = $(".selected").index();
+    var newIndex = 0;
 
-//     if(e.keyCode === 38) {
-//        console.log("it went up!");
-//        newIndex = thisIndex - blocksPerRow;
-//        $(".playerAtom").show();
-//     }else if (e.keyCode === 40) {
-//         console.log("it went down");
-//         newIndex = thisIndex + blocksPerRow;       
-//     }else if (e.keyCode === 39) {
-//     	console.log("it went right");
-//     	newIndex = thisIndex + 1;
-//     }else if (e.keyCode === 37) {
-//     	console.log("it went left bruh");
-//     	newIndex = thisIndex - 1; 
-//     }
+    if(e.keyCode === 38) {
+       console.log("it went up!");
+       newIndex = thisIndex - blocksPerRow;
+       $(".playerAtom").show();
+    }else if (e.keyCode === 40) {
+        console.log("it went down");
+        newIndex = thisIndex + blocksPerRow;       
+    }else if (e.keyCode === 39) {
+    	console.log("it went right");
+    	newIndex = thisIndex + 1;
+    }else if (e.keyCode === 37) {
+    	console.log("it went left bruh");
+    	newIndex = thisIndex - 1; 
+    }
 //     if(newIndex !== null) { 
 //         $(".test").eq(newIndex).addClass("selected").siblings().removeClass("selected");   
 //     }    
- // });
+ });
 
 
 
