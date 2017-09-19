@@ -2,13 +2,13 @@ $(function() {
 	// console.log("does this work");
 
 // hide the game at the start, so displays instructions first
-$(".gameDomain, #gameHeading, li, .playerAtom, #timer, #score").hide();
+$(".gameDomain, #gameHeading, li, .playerAtom, #timer, #score, #restart").hide();
 
 // this one click function allows user to start the game and then hides the instructions and displays the game
 $("#startGame").one("click", function() {
 	$(".cards, #startGame, .playerAtom").hide();
 	$(".gameDomain, #gameHeading, li, .playerAtom, #timer, #score").show();
-	timer ();
+	timer();
 });
 // end of one click
 
@@ -23,21 +23,21 @@ creatingGrid ();
 // function end
 
 // setting a timer
-	function timer () {
-	
-	  var updateTimer = function() {
-	    $('#timer').each(function() {
-	      var count = parseInt($(this).html());
-	      if (count !== 0) {
-	        $(this).html(count - 1);
-	      }else {
-	      	alert("your time is up!")
-	      }
-	    });
-	  };
-	
-	  setInterval(updateTimer, 1000);
-	};
+function timer () {
+
+  var updateTimer = function() {
+  	console.log("yo")
+      var count = parseInt($("#timer").html());
+      if (count !== 0) {
+        $("#timer").html(count - 1);
+      }else {
+      	clearInterval(interval);
+      	$("#restart").show();
+      	alert("time up")
+      }
+  };
+	var interval = setInterval(updateTimer, 1000);
+};
 // timer end
 
 
@@ -159,12 +159,14 @@ $("body").on("keydown", function(e){
     }    
     randomAtom = removalAddition(position, randomAtom);
 
-    $("#score").html("score:" +score);
+    $("#score").html("score: " + score);
 
  });
 // navigation end
 
+
 // removing and adding the randomAtom when the playerAtom reaches it
+	// also logs the score
 var score = 0;
 
 function removalAddition (position, randomAtom) {
