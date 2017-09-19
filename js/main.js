@@ -33,6 +33,7 @@ function timer () {
     	clearInterval(interval);
     	$("#restart").show();
     	alert("time up your score is: " + score);
+    	$("#timer").html(count + 15);
     }
   };
 	var interval = setInterval(updateTimer, 1000);
@@ -44,13 +45,11 @@ function timer () {
 $("#restart").on("click", function() {
 	setScore();
 	$("#restart").hide();
-
 });
 
 
 function setScore () {
 	score = 0;
-	count = 15;
 	timer();
 }
 // reset end
