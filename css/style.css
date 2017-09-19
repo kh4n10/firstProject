@@ -22,7 +22,7 @@ body {
 }
 
 /*edit timer here*/
-#timer {
+.smallBox {
 	width: 80px;
 	height: 30px;
 	border: 2px solid black;

@@ -2,12 +2,12 @@ $(function() {
 	// console.log("does this work");
 
 // hide the game at the start, so displays instructions first
-$(".gameDomain, #gameHeading, li, .playerAtom, #timer").hide();
+$(".gameDomain, #gameHeading, li, .playerAtom, #timer, #score").hide();
 
 // this one click function allows user to start the game and then hides the instructions and displays the game
 $("#startGame").one("click", function() {
 	$(".cards, #startGame, .playerAtom").hide();
-	$(".gameDomain, #gameHeading, li, .playerAtom, #timer").show();
+	$(".gameDomain, #gameHeading, li, .playerAtom, #timer, #score").show();
 	timer ();
 });
 // end of one click
@@ -159,13 +159,18 @@ $("body").on("keydown", function(e){
     }    
     randomAtom = removalAddition(position, randomAtom);
 
+    $("#score").html("score:" +score);
+
  });
 // navigation end
 
 // removing and adding the randomAtom when the playerAtom reaches it
+var score = 0;
+
 function removalAddition (position, randomAtom) {
 	if (randomAtom == position) {
-		console.log("grabbed it");
+		score ++;
+		console.log(score);
 		return randomGenerate();
 	}else {
 		return randomAtom;
@@ -173,4 +178,8 @@ function removalAddition (position, randomAtom) {
 };
 // the end of that function
 
+
+// a function to store the score
+
+// score function end
 });
