@@ -26,19 +26,34 @@ creatingGrid ();
 function timer () {
 
   var updateTimer = function() {
-  	console.log("yo")
-      var count = parseInt($("#timer").html());
-      if (count !== 0) {
-        $("#timer").html(count - 1);
-      }else {
-      	clearInterval(interval);
-      	$("#restart").show();
-      	alert("time up")
-      }
+    var count = parseInt($("#timer").html());
+    if (count !== 0) {
+      $("#timer").html(count - 1);
+    }else {
+    	clearInterval(interval);
+    	$("#restart").show();
+    	alert("time up your score is: " + score);
+    }
   };
 	var interval = setInterval(updateTimer, 1000);
 };
 // timer end
+
+
+// reset button click
+$("#restart").on("click", function() {
+	setScore();
+	$("#restart").hide();
+
+});
+
+
+function setScore () {
+	score = 0;
+	count = 15;
+	timer();
+}
+// reset end
 
 
 // create a div within 1 li
