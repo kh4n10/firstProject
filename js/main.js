@@ -23,7 +23,6 @@ creatingGrid ();
 // function end
 
 // setting a timer
-// if ($("#startGame") === "click") {
 	function timer () {
 	
 	  var updateTimer = function() {
@@ -31,13 +30,14 @@ creatingGrid ();
 	      var count = parseInt($(this).html());
 	      if (count !== 0) {
 	        $(this).html(count - 1);
+	      }else {
+	      	alert("your time is up!")
 	      }
 	    });
 	  };
 	
 	  setInterval(updateTimer, 1000);
 	};
-// }
 // timer end
 
 
@@ -168,7 +168,6 @@ function removalAddition (position, randomAtom) {
 		console.log("grabbed it");
 		return randomGenerate();
 	}else {
-		console.log("it has not grabbed it");
 		return randomAtom;
 	}
 };
