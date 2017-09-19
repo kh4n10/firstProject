@@ -8,6 +8,7 @@ $(".gameDomain, #gameHeading, li, .playerAtom, #timer").hide();
 $("#startGame").one("click", function() {
 	$(".cards, #startGame, .playerAtom").hide();
 	$(".gameDomain, #gameHeading, li, .playerAtom, #timer").show();
+	timer ();
 });
 // end of one click
 
@@ -36,16 +37,12 @@ creatingGrid ();
 	
 	  setInterval(updateTimer, 1000);
 	};
-timer ();
 // }
-
 // timer end
 
 
 // create a div within 1 li
 $("li").eq(0).append("<div class='playerAtom'></div>");
-
-
 
 // up check function
 function upCheck (position) {
@@ -96,6 +93,16 @@ function leftCheck (position) {
 // left check function end
 
 
+// generating random atoms around the board
+function randomGenerate () {
+	var randomGenerate = Math.floor(Math.random() * $("li").length);
+	$("li").eq(randomGenerate).append("<div class='randomAtom'></div>");
+	return randomGenerate;
+};
+var randomAtom = randomGenerate ();
+// generating random end
+
+
 // move the atom around function
 // function atomNavigation (position) {
 // 		$("li").eq(position).empty();
@@ -113,6 +120,7 @@ function leftCheck (position) {
  //  }
  //  $("li").eq(position).append("<div class='playerAtom'></div>");
 // }
+
 
 
 // allows the navigation of the atom using keyboard
@@ -149,9 +157,21 @@ $("body").on("keydown", function(e){
     	$("li").eq(position).append("<div class='playerAtom'></div>");
     	// console.log(position);
     }    
+    randomAtom = removalAddition(position, randomAtom);
+
  });
 // navigation end
 
-
+// removing and adding the randomAtom when the playerAtom reaches it
+function removalAddition (position, randomAtom) {
+	if (randomAtom == position) {
+		console.log("grabbed it");
+		return randomGenerate();
+	}else {
+		console.log("it has not grabbed it");
+		return randomAtom;
+	}
+};
+// the end of that function
 
 });

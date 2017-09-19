@@ -36,8 +36,6 @@ body {
 	color: #fff;
 }
 
-
-
 /* edit the game domain in here*/
 .gameDomain {
     width: 600px;
@@ -71,4 +69,18 @@ li {
 	border-radius: 100%;
 	padding: 10px;
 	margin: 10px auto;
+}
+
+
+
+/*edit the randomAtom generation in here*/
+
+.randomAtom {
+	width: 5px;
+	height: 5px;
+	border: 5px solid;
+	border-color: #c60909;
+	border-radius: 100%;
+	padding: 10px;
+	margin: 10px auto;	
 }
