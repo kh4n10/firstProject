@@ -19,7 +19,7 @@ body {
 /*edit game heading in here*/
 #gameHeading {
 	text-align: center;
-	margin-top: 15px;
+	margin: 50px 0;
 }
 
 /*edit timer here*/
@@ -32,7 +32,6 @@ body {
 	text-align: center;
 	background: linear-gradient(to bottom, #2f6663 0%, #f2af07 100%);
 	color: #fff;
-	box-sizing: border-box;
 	display: inline-block;
 	margin-right: 10px;
 }
@@ -44,6 +43,7 @@ button {
 	background: linear-gradient(to bottom, #2f6663 0%, #f2af07 100%);
 	color: #fff;
 	float: right;
+	margin-left: 30px;
 }
 
 
@@ -101,18 +101,24 @@ li {
 	width: 150px;
 	height: 50px;
 	border: 2px solid #2f6663;
-	border-radius: 5%;
+	border-radius: 25px;
 	text-align: center;
 	padding: 0;
 	float: right;
+	background: linear-gradient(to bottom, #2f6663 0%, #f2af07 100%);;
+	color: #fff;
+	display: inline-block;
 }
 
 
 .alert {
 	width: 200px;
-	height: 200px;
-	border: 2px solid black;
+	height: 100px;
+	border: 2px solid #2f6663;
 	float: left;
 	text-align: center;
-	border-radius: 100%;
+	border-radius: 50px;
+	background: linear-gradient(to bottom, #2f6663 0%, #f2af07 100%);
+	color: #fff;
+	display: inline-block;
 }
