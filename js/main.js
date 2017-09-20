@@ -44,7 +44,9 @@ function timer () {
 // reset button click
 $("#restart").on("click", function() {
 	$("#restart").hide();
-	score = 0;
+		score = 0
+		$("#score").empty();
+		$("#score").html("score: " + 0);
 	timer();
 });
 // reset end
