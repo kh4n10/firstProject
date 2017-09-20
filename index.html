@@ -35,6 +35,7 @@
 		</div>
 	</div>
 </div>
+
 <!-- card end -->
 <!-- instructions end -->
 
@@ -44,26 +45,38 @@
 <h1 id="gameHeading"><span class="badge badge-pill badge-secondary text-center">ATOM</span></h1>
 
 <!-- the game domain; the atom -->
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-
-			<div id="highScores"></div>
-			<ul class="gameDomain">
-	
-			</ul>
-
-			<div class="container-fluid">
-				<div class="smallBox" id="timer">15</div>
-				<div class="smallBox" id="score">score: 0</div>
+<main>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6">
+				<section>
+					<ul class="gameDomain">
+			
+					</ul>
+				</section>
 			</div>
-
-			<button id="restart">Reset Game</button>
+	
+			<div class="col-md-6">
+				<section>
+					<div class="smallBox" id="timer">15</div>
+					<div class="smallBox" id="score">score: 0</div>
+					<button id="restart">Reset Game</button>
+					<div class="alert"></div>
+				</section>
+			</div>
+	
+		<div class="row">
+			<div class="col-md-6">
+				<div id="highScores"></div>
+			</div>
 		</div>
 	</div>
-</div>
+</main>
+			
+		
+
 <!-- the game end -->
 
-
+</div>
 </body>
 </html>

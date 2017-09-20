@@ -2,7 +2,7 @@ $(function() {
 	// console.log("does this work");
 
 // hide the game at the start, so displays instructions first
-$(".gameDomain, #gameHeading, li, .playerAtom, #timer, #score, #restart, #highScores").hide();
+$(".gameDomain, #gameHeading, li, .playerAtom, #timer, #score, #restart, #highScores, .alert").hide();
 
 // this one click function allows user to start the game and then hides the instructions and displays the game
 $("#startGame").one("click", function() {
@@ -32,7 +32,7 @@ function timer () {
     }else {
     	clearInterval(interval);
     	$("#restart").show();
-    	alert("time up your score is: " + score);
+    	$(".alert").show().html("time up your score is: " + score);
     	$("#timer").html(count + 15);
     	highScores();
     	$("body").off("keydown");
@@ -56,7 +56,7 @@ $("#restart").on("click", function() {
 	score = 0
 	$("#score").empty();
 	$("#score").html("score: " + 0);
-	$("#highScores").hide();
+	$("#highScores, .alert").hide();
 	$("body")
 	navigation();
 	timer();
