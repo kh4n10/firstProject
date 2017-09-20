@@ -2,7 +2,7 @@ $(function() {
 	// console.log("does this work");
 
 // hide the game at the start, so displays instructions first
-$(".gameDomain, #gameHeading, li, .playerAtom, #timer, #score, #restart").hide();
+$(".gameDomain, #gameHeading, li, .playerAtom, #timer, #score, #restart, #highScores").hide();
 
 // this one click function allows user to start the game and then hides the instructions and displays the game
 $("#startGame").one("click", function() {
@@ -34,19 +34,28 @@ function timer () {
     	$("#restart").show();
     	alert("time up your score is: " + score);
     	$("#timer").html(count + 15);
+    	highScores();
     }
   };
 	var interval = setInterval(updateTimer, 1000);
 };
 // timer end
 
+// leaderboard function start
+function highScores () {
+	$("#highScores").show();
+	$("#highScores").html("Top 3 high scores" + "</br>" + storeAllScores());
+}
+
+// leaderboard function end
 
 // reset button click
 $("#restart").on("click", function() {
 	$("#restart").hide();
-		score = 0
-		$("#score").empty();
-		$("#score").html("score: " + 0);
+	score = 0
+	$("#score").empty();
+	$("#score").html("score: " + 0);
+	$("#highScores").hide();
 	timer();
 });
 // reset end
@@ -194,6 +203,16 @@ function removalAddition (position, randomAtom) {
 
 
 // a function to store the score
+var allScores = [];
+
+function storeAllScores () {
+	allScores.push(score);
+	allScores.sort(function (a, b) {
+		return b - a
+	});
+	return allScores;
+	// $("#highScores").html(allScores);
+}
 
 // score function end
 });
