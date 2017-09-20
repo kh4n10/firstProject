@@ -35,6 +35,7 @@ function timer () {
     	alert("time up your score is: " + score);
     	$("#timer").html(count + 15);
     	highScores();
+    	$("body").off("keydown");
     }
   };
 	var interval = setInterval(updateTimer, 1000);
@@ -56,6 +57,8 @@ $("#restart").on("click", function() {
 	$("#score").empty();
 	$("#score").html("score: " + 0);
 	$("#highScores").hide();
+	$("body")
+	navigation();
 	timer();
 });
 // reset end
@@ -146,42 +149,46 @@ var randomAtom = randomGenerate ();
 // allows the navigation of the atom using keyboard
 var position = 0;
 
-$("body").on("keydown", function(e){
+function navigation () {
+	$("body").on("keydown", function(e){
+	
+	    if(e.keyCode === 38) {
+	    	$("li").eq(position).empty();
+	    	if (upCheck(position)) {
+	    		position -= 10;
+	    	}
+	    	$("li").eq(position).append("<div class='playerAtom'></div>");
+	      // console.log(position);
+	    }
+	    else if (e.keyCode === 40) {
+	    	$("li").eq(position).empty();
+	    	if (downCheck(position)) {
+	    		position += 10;
+	    	}
+	    	$("li").eq(position).append("<div class='playerAtom'></div>");
+	      // console.log(position);      
+	    }
+	    else if (e.keyCode === 39) {
+	    	$("li").eq(position).empty();
+	    	// atomRight(position);
+	    	if (rightCheck(position)) position++;
+	    	$("li").eq(position).append("<div class='playerAtom'></div>");
+	    	// console.log(position);
+	    }
+	    else if (e.keyCode === 37) {
+	    	$("li").eq(position).empty();
+	    	if (leftCheck(position)) position--;
+	    	$("li").eq(position).append("<div class='playerAtom'></div>");
+	    	// console.log(position);
+	    }    
+	    randomAtom = removalAddition(position, randomAtom);
+	
+	    $("#score").html("score: " + score);
+	
+	});
+}
 
-    if(e.keyCode === 38) {
-    	$("li").eq(position).empty();
-    	if (upCheck(position)) {
-    		position -= 10;
-    	}
-    	$("li").eq(position).append("<div class='playerAtom'></div>");
-      // console.log(position);
-    }
-    else if (e.keyCode === 40) {
-    	$("li").eq(position).empty();
-    	if (downCheck(position)) {
-    		position += 10;
-    	}
-    	$("li").eq(position).append("<div class='playerAtom'></div>");
-      // console.log(position);      
-    }
-    else if (e.keyCode === 39) {
-    	$("li").eq(position).empty();
-    	// atomRight(position);
-    	if (rightCheck(position)) position++;
-    	$("li").eq(position).append("<div class='playerAtom'></div>");
-    	// console.log(position);
-    }
-    else if (e.keyCode === 37) {
-    	$("li").eq(position).empty();
-    	if (leftCheck(position)) position--;
-    	$("li").eq(position).append("<div class='playerAtom'></div>");
-    	// console.log(position);
-    }    
-    randomAtom = removalAddition(position, randomAtom);
-
-    $("#score").html("score: " + score);
-
- });
+navigation();
 // navigation end
 
 
@@ -214,7 +221,7 @@ function storeAllScores () {
 	if (allScores.length <= 3) {
 		return allScores;
 	} else {
-		return allScores.splice(0,3);
+		return allScores.slice(0,3);
 	}
 }
 
