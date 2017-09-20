@@ -14,10 +14,6 @@ body {
 	color: #fff;
 }
 
-/* edit the startgame button here*/
-#startGame {
-	float: right;
-}
 
 /*edit game heading in here*/
 #gameHeading {
@@ -45,6 +41,11 @@ button {
 	border: 2px solid #2f6663;
 	background: linear-gradient(to bottom, #2f6663 0%, #f2af07 100%);
 	color: #fff;
+	float: right;
+}
+
+#restart {
+	margin: 10px auto;
 }
 
 
@@ -53,7 +54,6 @@ button {
 .gameDomain {
     width: 600px;
     height: 600px;
-    float: left;
     border: 2px solid #2f6663;
     margin: 10px auto;
     padding: 0;
