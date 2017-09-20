@@ -32,7 +32,7 @@ function timer () {
     }else {
     	clearInterval(interval);
     	$("#restart").show();
-    	$(".alert").show().html("time up your score is: " + score);
+    	$(".alert").show().html("Time up your score is: " + score);
     	$("#timer").html(count + 15);
     	highScores();
     	$("body").off("keydown");
