@@ -9,6 +9,7 @@ body {
 .cards {
 	margin-top: 10px;
 	border-radius: 40px;
+	border: 2px solid #2f6663;
 }
 
 /* edit the startgame button here*/
@@ -26,13 +27,12 @@ body {
 .smallBox {
 	width: 80px;
 	height: 30px;
-	border: 2px solid black;
+	border: 2px solid #2f6663;
 	border-radius: 100%;
 	margin: 10px 20px;
 	padding: 0;
 	float: left;
 	text-align: center;
-	border-color: #2f6663;
 	background: linear-gradient(to bottom, #2f6663 0%, #f2af07 100%);
 	color: #fff;
 }
@@ -51,8 +51,7 @@ button {
     width: 600px;
     height: 600px;
     float: left;
-    border: 2px solid;
-    border-color: #2f6663;
+    border: 2px solid #2f6663;
     margin: 10px auto;
     padding: 0;
     background: linear-gradient(to bottom, #2f6663 0%, #f2af07 100%);
@@ -74,8 +73,7 @@ li {
 .playerAtom {
 	width: 5px;
 	height: 5px;
-	border: 5px solid;
-	border-color: #fff;
+	border: 5px solid #fff;
 	border-radius: 100%;
 	padding: 10px;
 	margin: 10px auto;
@@ -88,8 +86,7 @@ li {
 .randomAtom {
 	width: 5px;
 	height: 5px;
-	border: 5px solid;
-	border-color: #c60909;
+	border: 5px solid #c60909;
 	border-radius: 100%;
 	padding: 10px;
 	margin: 10px auto;	
