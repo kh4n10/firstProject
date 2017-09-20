@@ -10,6 +10,8 @@ body {
 	margin-top: 10px;
 	border-radius: 40px;
 	border: 2px solid #2f6663;
+	background: #2f6663;
+	color: #fff;
 }
 
 /* edit the startgame button here*/
@@ -40,6 +42,7 @@ body {
 /*edit the buttons in here*/
 button {
 	border-radius: 100px;
+	border: 2px solid #2f6663;
 	background: linear-gradient(to bottom, #2f6663 0%, #f2af07 100%);
 	color: #fff;
 }
@@ -54,7 +57,7 @@ button {
     border: 2px solid #2f6663;
     margin: 10px auto;
     padding: 0;
-    background: linear-gradient(to bottom, #2f6663 0%, #f2af07 100%);
+    background-color: #2f6663;
     border-radius: 10px;
 }
 
