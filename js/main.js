@@ -181,6 +181,7 @@ var score = 0;
 function removalAddition (position, randomAtom) {
 	if (position === randomAtom) {
 		score ++;
+		$(".randomAtom").hide();
 		console.log(score);
 		return randomGenerate();
 	}else {
