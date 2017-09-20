@@ -43,15 +43,10 @@ function timer () {
 
 // reset button click
 $("#restart").on("click", function() {
-	setScore();
 	$("#restart").hide();
-});
-
-
-function setScore () {
 	score = 0;
 	timer();
-}
+});
 // reset end
 
 
@@ -184,7 +179,7 @@ $("body").on("keydown", function(e){
 var score = 0;
 
 function removalAddition (position, randomAtom) {
-	if (randomAtom == position) {
+	if (position === randomAtom) {
 		score ++;
 		console.log(score);
 		return randomGenerate();

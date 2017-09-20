@@ -2,6 +2,7 @@ body {
 	width: 100vw;
 	height: 100vh;
 	font: 200 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background: linear-gradient(to bottom, #fff 0%, #2f6663 100%);
 }
 
 /* edit the bootstrap cards here*/
@@ -35,6 +36,15 @@ body {
 	background: linear-gradient(to bottom, #2f6663 0%, #f2af07 100%);
 	color: #fff;
 }
+
+/*edit the buttons in here*/
+button {
+	border-radius: 100px;
+	background: linear-gradient(to bottom, #2f6663 0%, #f2af07 100%);
+	color: #fff;
+}
+
+
 
 /* edit the game domain in here*/
 .gameDomain {
