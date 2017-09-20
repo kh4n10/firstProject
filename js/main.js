@@ -44,7 +44,7 @@ function timer () {
 // leaderboard function start
 function highScores () {
 	$("#highScores").show();
-	$("#highScores").html("Top 3 high scores" + "</br>" + storeAllScores());
+	$("#highScores").html("Top 3 high scores" + "</br>" + storeAllScores() + "</br>");
 }
 
 // leaderboard function end
@@ -210,8 +210,12 @@ function storeAllScores () {
 	allScores.sort(function (a, b) {
 		return b - a
 	});
-	return allScores;
-	// $("#highScores").html(allScores);
+
+	if (allScores.length <= 3) {
+		return allScores;
+	} else {
+		return allScores.splice(0,3);
+	}
 }
 
 // score function end
