@@ -19,16 +19,16 @@ body {
 /*edit game heading in here*/
 #gameHeading {
 	text-align: center;
-	margin: 50px 0;
+	margin-bottom: 50px;
+	margin-top: 5px;
 }
 
 /*edit timer here*/
 .smallBox {
-	width: 80px;
+	width: 100px;
 	height: 30px;
 	border: 2px solid #2f6663;
 	border-radius: 100%;
-	float: left;
 	text-align: center;
 	background: linear-gradient(to bottom, #2f6663 0%, #f2af07 100%);
 	color: #fff;
@@ -43,7 +43,7 @@ button {
 	background: linear-gradient(to bottom, #2f6663 0%, #f2af07 100%);
 	color: #fff;
 	float: right;
-	margin-left: 30px;
+	margin-left: 10px;
 }
 
 
@@ -57,6 +57,7 @@ button {
     border-radius: 10px;
     box-shadow: 0px 5px 15px 0px #f90212;
     display: inline-block;
+    margin-bottom: 20px;
 }
 
 li {
@@ -123,12 +124,12 @@ li {
 
 .alert {
 	width: 200px;
-	height: 100px;
+	height: 80px;
 	border: 2px solid #2f6663;
-	float: left;
 	text-align: center;
 	border-radius: 50px;
 	background: linear-gradient(to bottom, #2f6663 0%, #f2af07 100%);
 	color: #fff;
 	display: inline-block;
+	float: left;
 }

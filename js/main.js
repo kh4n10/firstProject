@@ -124,7 +124,10 @@ function leftCheck (position) {
 
 // generating random electrons/protons around the board
 function randomGenerateProton () {
-	var randomGenerate = Math.floor(Math.random() * $("li").length);
+	var randomGenerate;
+	while (!randomGenerate || randomGenerate === randomProton) {
+		randomGenerate = Math.floor(Math.random() * $("li").length);
+	}
 	$("li").eq(randomGenerate).append("<div class='randomAtom'></div>");
 	return randomGenerate;
 };
