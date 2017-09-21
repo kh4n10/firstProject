@@ -141,7 +141,7 @@ function randomGenerateElectron () {
 	return randomGenerate;
 }
 
-var randomElectron = randomGenerateElectron();
+var randomElectron = randomGenerateElectron()
 
 
 
@@ -184,7 +184,8 @@ function navigation () {
 	    	$("li").eq(position).append("<div class='playerAtom'></div>");
 	    	// console.log(position);
 	    }    
-	    var randomAtom = removalAddition(position, randomProton, randomElectron);
+	    randomProton = removalAdditionProton(position, randomProton);
+	    randomElectron = removalAdditionElectron(position, randomElectron);
 	
 	    $("#score").html("score: " + score);
 	
@@ -199,17 +200,27 @@ navigation();
 	// also logs the score
 var score = 0;
 
-function removalAddition (position, randomProton, randomElectron) {
+function removalAdditionProton (position, randomProton) {
 	if (position === randomProton) {
 		score ++;
 		$(".randomAtom").hide();
+		console.log(score);
 		return randomGenerateProton();
-	}else if (position === randomElectron) {
+	}else {
+		return randomProton;
+	}
+};
+
+
+
+function removalAdditionElectron (position, randomElectron) {
+	if (position === randomElectron) {
 		score --;
 		$(".randomElectron").hide();
+		console.log(score);
 		return randomGenerateElectron();
 	}else {
-		return [randomProton, randomElectron];
+		return randomElectron;
 	}
 };
 // the end of that function
