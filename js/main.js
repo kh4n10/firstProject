@@ -1,5 +1,4 @@
 $(function() {
-	// console.log("does this work");
 
 // hide the game at the start, so displays instructions first
 $(".gameDomain, #gameHeading, li, .playerAtom, #timer, #score, #restart, #highScores, .alert").hide();
@@ -56,7 +55,6 @@ function highScores () {
 	$("#highScores").show();
 	$("#highScores").html("Top 3 high scores" + "</br>" + storeAllScores() + "</br>");
 }
-
 // leaderboard function end
 
 // reset button click
@@ -71,7 +69,6 @@ $("#restart").on("click", function() {
 	timer();
 });
 // reset end
-
 
 // create a div within 1 li
 $("li").eq(0).append("<div class='playerAtom'></div>");
@@ -125,26 +122,20 @@ function leftCheck (position) {
 // left check function end
 
 
-// generating random atoms around the board
+// generating random electrons/protons around the board
 function randomGenerateProton () {
 	var randomGenerate = Math.floor(Math.random() * $("li").length);
 	$("li").eq(randomGenerate).append("<div class='randomAtom'></div>");
 	return randomGenerate;
 };
-
 var randomProton = randomGenerateProton ();
-
 
 function randomGenerateElectron () {
 	var randomGenerate = Math.floor(Math.random() * $("li").length);
 	$("li").eq(randomGenerate).append("<div class='randomElectron'></div>");
 	return randomGenerate;
 }
-
 var randomElectron = randomGenerateElectron()
-
-
-
 // generating random end
 
 
@@ -191,33 +182,27 @@ function navigation () {
 	
 	});
 }
-
 navigation();
 // navigation end
 
-
-// removing and adding the randomAtom when the playerAtom reaches it
+// removing and adding the electrons/protons when the playerAtom reaches it
 	// also logs the score
 var score = 0;
 
 function removalAdditionProton (position, randomProton) {
 	if (position === randomProton) {
-		score ++;
+		score += 10;
 		$(".randomAtom").hide();
-		console.log(score);
 		return randomGenerateProton();
 	}else {
 		return randomProton;
 	}
 };
 
-
-
 function removalAdditionElectron (position, randomElectron) {
 	if (position === randomElectron) {
-		score --;
+		score -= 5;
 		$(".randomElectron").hide();
-		console.log(score);
 		return randomGenerateElectron();
 	}else {
 		return randomElectron;
@@ -241,6 +226,5 @@ function storeAllScores () {
 		return allScores.slice(0,3);
 	}
 }
-
 // score function end
 });
