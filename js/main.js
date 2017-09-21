@@ -163,28 +163,23 @@ function navigation () {
 	    		position -= 10;
 	    	}
 	    	$("li").eq(position).append("<div class='playerAtom'></div>");
-	      // console.log(position);
 	    }
 	    else if (e.keyCode === 40) {
 	    	$("li").eq(position).empty();
 	    	if (downCheck(position)) {
 	    		position += 10;
 	    	}
-	    	$("li").eq(position).append("<div class='playerAtom'></div>");
-	      // console.log(position);      
+	    	$("li").eq(position).append("<div class='playerAtom'></div>");    
 	    }
 	    else if (e.keyCode === 39) {
 	    	$("li").eq(position).empty();
-	    	// atomRight(position);
 	    	if (rightCheck(position)) position++;
 	    	$("li").eq(position).append("<div class='playerAtom'></div>");
-	    	// console.log(position);
 	    }
 	    else if (e.keyCode === 37) {
 	    	$("li").eq(position).empty();
 	    	if (leftCheck(position)) position--;
 	    	$("li").eq(position).append("<div class='playerAtom'></div>");
-	    	// console.log(position);
 	    }
 
 	    randomProton = removalAdditionProton(position, randomProton);

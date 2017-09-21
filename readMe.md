@@ -38,7 +38,7 @@ After careful consideration, I decided upon designing a game which will use the 
 
 My game is called **ATOM**, with the idea being inspired from the classic snake.
 
-**The White Atom:** The user will navigate a white atom around a board attempting to collect as many protons as possible within a set time limit of 30 seconds.
+**The White Atom:** Using the up, down, left and right keys, the player navigates a white atom around the board  whilst attempting to collect as many protons as possible within a set time limit of 30 seconds.
 
 **Red Proton:** The protons are coloured red and upon collecting them, the player gains 10 points.
 
@@ -53,10 +53,36 @@ Once the game has finished, a message will appear 1 second later to inform the u
 ###Functionality
 This is a simple application that displays the game; ATOM. Manipulating when the content of the HTML should be displayed and hidden was achieved by using JavaScript and JQuery.
 
-###How the plan was implemented
+###Implementation
+####General
+In order to make things easier for myself, I sketched a series of wireframe designs. Doing this assisted me to prioritise tasks and allowed me to create mini milestones (listed below).
+
+**Milestones for the game:**
+
+* By the end of day 2 have a basic version of the game that functions.
+* By the end of day 3 add styling and extra functions such as: reset button, timer and display the score.
+* By the end of day 4 style to perfection and complete coding.
+
+During the course of the week, the ReadMe.md file was updated at the end of every day, with the presentation being prepared towards the end of day 4.
+
+####The Code
+When it came to writing the code, the first step I took was to write comments in the index.html and main.js files. This gave me time to think through, what do I need to do? and how do I need to go about making the code flow and function without repeating code?.
+
+The key features of my code were as follows:
+
+* Bootstrap (version 4): used cards, columns, container-fluid and rows.
+* CSS: used for the styling of the whole HTML.
+* Favicon link.
+* HTML5 elements with the use of semantic tags such as main and section.
+* JQuery: used extensively where it could, as it reduced the line of code. It was really useful to use when appending elements **e.g.** when appending a list item into a list item as well as getting elements and displaying the scores in the HTML.
+* JavaScript: made use of the for and while loops, as well as using functions to neaten the code and reduce the lines of code. Furthermore, if, else and else if statements were used.
 
 ###Overcoming the hurdles
+
 
 ###Future Work
 
 ###Link to the game
+[Click here to access ATOM](https://kh4n10.github.io/firstProject/)
+
+This site has the most recent upto date code.
