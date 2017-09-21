@@ -20,77 +20,69 @@
 
 <!-- instructions section for the game -->
 <!-- card start -->
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<section class="aboutCard">
-				<div class="card cards">
-	  			<div class="card-body">
-	    			<h1 class="card-title heading">Welcome to <span class="badge badge-pill badge-secondary">ATOM</span></h1>
-	    			<h2>How to play</h2>
-	    			<p class="card-text">
-
-							<strong>The White Atom:</strong> Using up, down, left and right keys, navigate the white atom around attempting to collect as many protons as possible within a set time limit of 30 seconds.
-							</br>
-							</br>
-							<strong>Red Proton:</strong> The protons are coloured red and upon collecting them, the player gains 10 points.
-							</br>
-							</br>
-							<strong>Green Electrons:</strong> 3 electrons will be randomly generated onto the board and will relocate randomly whenever the white atom moves. If the user collects a green electron, 5 points will be deducted from the score.
-							</br>
-							</br>
-							<strong>Features:</strong> You will have 30 seconds to move the white atom around to collect as many protons as possible, without picking up any electrons to gain the highest score!
-							</br>
-							A timer counting down will be visible below the board. To the right of the timer will be a scoreboard which updates whenever the user collects a proton or a electron.
-							</br>
-							Once the game has finished, a message will appear 1 second later to the left of the timer to inform you the game has finished and your final score. A second later, a "Top 3 high score" board will appear at the bottom right of the screen(<strong>Note:</strong> You <strong>CANNOT</strong> input a name along with your scores). Following this, to the right of the top 3 scoreboard a reset button will appear where you have the option to start the game again and attempt to beat your previous scores! </p>
-	    			<button id="startGame">Start game</button>
-	  			</div>
-	  		</div>
-	  	</section>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<section class="aboutCard">
+					<div class="card cards">
+		  			<div class="card-body">
+		    			<h1 class="card-title heading">Welcome to <span class="badge badge-pill badge-secondary">ATOM</span></h1>
+		    			<h2>How to play</h2>
+		    			<p class="card-text">
+	
+								<strong>The White Atom:</strong> Using up, down, left and right keys, navigate the white atom around attempting to 	collect as many protons as possible within a set time limit of 30 seconds.
+								</br>
+								</br>
+								<strong>Red Proton:</strong> The protons are coloured red and upon collecting them, the player gains 10 points.
+								</br>
+								</br>
+								<strong>Green Electrons:</strong> 3 electrons will be randomly generated onto the board and will relocate randomly 	whenever the white atom moves. If the user collects a green electron, 5 points will be deducted from the score.
+								</br>
+								</br>
+								<strong>Features:</strong> You will have 30 seconds to move the white atom around to collect as many protons as 	possible, without picking up any electrons to gain the highest score!
+								</br>
+								A timer counting down will be visible below the board. To the right of the timer will be a scoreboard which updates 	whenever the user collects a proton or a electron.
+								</br>
+								Once the game has finished, a message will appear 1 second later to the left of the timer to inform you the game has 	finished and your final score. A second later, a "Top 3 high score" board will appear at the bottom right of the 	screen(<strong>Note:</strong> You <strong>CANNOT</strong> input a name along with your scores). Following this, to the 	right of the top 3 scoreboard a reset button will appear where you have the option to start the game again and attempt 	to beat your previous scores! </p>
+		    			<button id="startGame">Start game</button>
+		  			</div>
+		  		</div>
+		  	</section>
+			</div>
 		</div>
 	</div>
-</div>
-
 <!-- card end -->
 <!-- instructions end -->
 
-
 <!-- the game start -->
-
-<h1 id="gameHeading"><span class="badge badge-pill badge-secondary text-center">ATOM</span></h1>
+	<h1 id="gameHeading"><span class="badge badge-pill badge-secondary text-center">ATOM</span></h1>
 
 <!-- the game domain; the atom -->
-<main>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-6">
-				<section>
-					<ul class="gameDomain">
-			
-					</ul>
-				</section>
+	<main>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6">
+					<section>
+						<ul class="gameDomain">
+				
+						</ul>
+					</section>
+				</div>
 			</div>
-		</div>
-	
-		<div class="row">
-			<div class="col-md-12">
-				<section>
-					<div class="smallBox" id="timer">30</div>
-					<div class="smallBox" id="score">score: 0</div>
-					<button id="restart">Reset Game</button>
-					<div id="highScores"></div>
-					<div class="alert"></div>
-				</section>
-			</div>
-		</div>
-	</div>
-</main>
-			
 		
-
+			<div class="row">
+				<div class="col-md-12">
+					<section>
+						<div class="smallBox" id="timer">30</div>
+						<div class="smallBox" id="score">score: 0</div>
+						<button id="restart">Reset Game</button>
+						<div id="highScores"></div>
+						<div class="alert"></div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</main>
 <!-- the game end -->
-
-</div>
 </body>
 </html>

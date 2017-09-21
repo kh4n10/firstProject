@@ -24,7 +24,6 @@ h2 {
 	box-shadow: 0px 5px 15px 0px #f2af07;
 }
 
-
 /*edit game heading in here*/
 #gameHeading {
 	text-align: center;
@@ -54,7 +53,6 @@ button {
 	float: right;
 	margin-left: 10px;
 }
-
 
 /* edit the game domain in here*/
 .gameDomain {
@@ -90,8 +88,6 @@ li {
 	margin: 10px auto;
 }
 
-
-
 /*edit the randomAtom generation in here*/
 
 .randomAtom {
@@ -103,7 +99,6 @@ li {
 	margin: 10px auto;	
 }
 
-
 .randomElectron {
 	width: 5px;
 	height: 5px;
@@ -112,8 +107,6 @@ li {
 	padding: 10px;
 	margin: 10px auto;	
 }
-
-
 
 /*edit the highscore box in here*/
 
@@ -129,7 +122,6 @@ li {
 	color: #fff;
 	display: inline-block;
 }
-
 
 .alert {
 	width: 200px;

@@ -75,12 +75,18 @@ The key features of my code were as follows:
 * Favicon link.
 * HTML5 elements with the use of semantic tags such as main and section.
 * JQuery: used extensively where it could, as it reduced the line of code. It was really useful to use when appending elements **e.g.** when appending a list item into a list item as well as getting elements and displaying the scores in the HTML.
-* JavaScript: made use of the for and while loops, as well as using functions to neaten the code and reduce the lines of code. Furthermore, if, else and else if statements were used.
+* JavaScript: made use of the for and while loops, as well as using functions to neaten the code and reduce the lines of code. I also used the if, else and else if statements.
 
-###Overcoming the hurdles
+###Encountering hurdles
+During the course of this project, there were various hurdles that I encountered. My most apparent hurdle was being hung up on one problem for so long that I was progressing slowly, meaning the deadlines I had set were not met. After day 1, I rectified this by replanning and if I did slow down during a certain aspect of my code, I would move onto the styling aspect or give myself time away from the screen.
 
+Other hurdles I experienced were, deciding what the most suitable JQuery function was to use for a given scenario. Experimenting with various functions gave me knowledge on what would work, but also meant I lost out on time. Furthermore, when it came to writing functions, I would forget to call the function which meant it wouldn't display in the DOM, which in turn made me think the function was incorrect.
 
+Overall, I am proud of what has been achieved within the week. I feel like I pushed myself beyond my own expectations and was allowed to display creativity throughout this whole project.
 ###Future Work
+* Make the game more responsive so it can be used on mobile and tablets.
+* Eradicate the tiny bugs in the game, so it runs smoothly all the time, in turn increasing the user's in game experience.
+* Add extra elements into the game **e.g.** changes in difficulty, names being added into the highscore board.
 
 ###Link to the game
 [Click here to access ATOM](https://kh4n10.github.io/firstProject/)
