@@ -31,11 +31,20 @@ function timer () {
       $("#timer").html(count - 1);
     }else {
     	clearInterval(interval);
-    	$("#restart").show();
-    	$(".alert").show().html("Time up your score is: " + score);
     	$("#timer").html(count + 15);
-    	highScores();
     	$("body").off("keydown");
+
+    	setTimeout(function() {
+    		$(".alert").show().html("Time up your score is: " + score);
+    	}, 1000);
+
+    	setTimeout(function() {
+    		highScores();
+    	}, 2000);
+
+    	setTimeout(function() {
+    		$("#restart").show();
+    	},5000);    	
     }
   };
 	var interval = setInterval(updateTimer, 1000);
