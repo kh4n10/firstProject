@@ -1,5 +1,5 @@
 $(function() {
-
+var electronTimer;
 // hide the game at the start, so displays instructions first
 $(".gameDomain, #gameHeading, li, .playerAtom, #timer, #score, #restart, #highScores, .alert").hide();
 
@@ -130,12 +130,20 @@ function randomGenerateProton () {
 };
 var randomProton = randomGenerateProton ();
 
-function randomGenerateElectron () {
-	var randomGenerate = Math.floor(Math.random() * $("li").length);
-	$("li").eq(randomGenerate).append("<div class='randomElectron'></div>");
-	return randomGenerate;
+function randomGenerateElectron () {	
+	var electrons = [];
+	for(var i = 0; i < 4; i++) {
+		var randomGenerate;
+		while (!randomGenerate || randomGenerate === randomProton || electrons.indexOf(randomGenerate) !== -1) {
+			randomGenerate = Math.floor(Math.random() * $("li").length);
+		}
+		electrons.push(randomGenerate);
+		$("li").eq(randomGenerate).append("<div class='randomElectron'></div>");
+	}
+	
+	return electrons;
 }
-var randomElectron = randomGenerateElectron()
+var randomElectrons = [];
 // generating random end
 
 
@@ -176,8 +184,11 @@ function navigation () {
 	    	// console.log(position);
 	    }    
 	    randomProton = removalAdditionProton(position, randomProton);
-	    randomElectron = removalAdditionElectron(position, randomElectron);
-	
+
+	    electronTimer = setTimeout(function() {
+	    	randomElectrons = removalAdditionElectron(position, randomElectrons);
+			}, 200);
+
 	    $("#score").html("score: " + score);
 	
 	});
@@ -199,14 +210,11 @@ function removalAdditionProton (position, randomProton) {
 	}
 };
 
-function removalAdditionElectron (position, randomElectron) {
-	if (position === randomElectron) {
-		score -= 5;
-		$(".randomElectron").hide();
-		return randomGenerateElectron();
-	}else {
-		return randomElectron;
-	}
+function removalAdditionElectron (position, randomElectrons) {
+	clearTimeout(electronTimer);
+	if (randomElectrons.indexOf(position) !== -1) score -= 5;
+	$(".randomElectron").hide();
+	return randomGenerateElectron();
 };
 // the end of that function
 
