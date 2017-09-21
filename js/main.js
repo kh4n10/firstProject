@@ -30,7 +30,7 @@ function timer () {
       $("#timer").html(count - 1);
     }else {
     	clearInterval(interval);
-    	$("#timer").html(count + 15);
+    	$("#timer").html(count + 30);
     	$("body").off("keydown");
 
     	setTimeout(function() {
@@ -132,7 +132,7 @@ var randomProton = randomGenerateProton ();
 
 function randomGenerateElectron () {	
 	var electrons = [];
-	for(var i = 0; i < 4; i++) {
+	for(var i = 0; i < 3; i++) {
 		var randomGenerate;
 		while (!randomGenerate || randomGenerate === randomProton || electrons.indexOf(randomGenerate) !== -1) {
 			randomGenerate = Math.floor(Math.random() * $("li").length);
@@ -182,12 +182,11 @@ function navigation () {
 	    	if (leftCheck(position)) position--;
 	    	$("li").eq(position).append("<div class='playerAtom'></div>");
 	    	// console.log(position);
-	    }    
-	    randomProton = removalAdditionProton(position, randomProton);
+	    }
 
-	    electronTimer = setTimeout(function() {
-	    	randomElectrons = removalAdditionElectron(position, randomElectrons);
-			}, 200);
+	    randomProton = removalAdditionProton(position, randomProton);
+			randomElectrons = removalAdditionElectron(position, randomElectrons);
+			
 
 	    $("#score").html("score: " + score);
 	
