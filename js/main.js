@@ -44,7 +44,7 @@ function timer () {
 
     	setTimeout(function() {
     		$("#restart").show();
-    	},5000);    	
+    	},3000);    	
     }
   };
 	var interval = setInterval(updateTimer, 1000);
@@ -126,32 +126,26 @@ function leftCheck (position) {
 
 
 // generating random atoms around the board
-function randomGenerate () {
+function randomGenerateProton () {
 	var randomGenerate = Math.floor(Math.random() * $("li").length);
 	$("li").eq(randomGenerate).append("<div class='randomAtom'></div>");
 	return randomGenerate;
 };
-var randomAtom = randomGenerate ();
+
+var randomProton = randomGenerateProton ();
+
+
+function randomGenerateElectron () {
+	var randomGenerate = Math.floor(Math.random() * $("li").length);
+	$("li").eq(randomGenerate).append("<div class='randomElectron'></div>");
+	return randomGenerate;
+}
+
+var randomElectron = randomGenerateElectron();
+
+
+
 // generating random end
-
-
-// move the atom around function
-// function atomNavigation (position) {
-// 		$("li").eq(position).empty();
-	// if (upCheck(position)) {
- //    		position -= 10;
- //  }
- //  else if (downCheck(position)) {
- //    		position += 10;
- //  }
- //  else if (rightCheck(position)) {
- //  	position++;
- //  }
- //  else if (leftCheck(position)) {
- //  	position--;
- //  }
- //  $("li").eq(position).append("<div class='playerAtom'></div>");
-// }
 
 
 
@@ -190,7 +184,7 @@ function navigation () {
 	    	$("li").eq(position).append("<div class='playerAtom'></div>");
 	    	// console.log(position);
 	    }    
-	    randomAtom = removalAddition(position, randomAtom);
+	    var randomAtom = removalAddition(position, randomProton, randomElectron);
 	
 	    $("#score").html("score: " + score);
 	
@@ -205,14 +199,17 @@ navigation();
 	// also logs the score
 var score = 0;
 
-function removalAddition (position, randomAtom) {
-	if (position === randomAtom) {
+function removalAddition (position, randomProton, randomElectron) {
+	if (position === randomProton) {
 		score ++;
 		$(".randomAtom").hide();
-		console.log(score);
-		return randomGenerate();
+		return randomGenerateProton();
+	}else if (position === randomElectron) {
+		score --;
+		$(".randomElectron").hide();
+		return randomGenerateElectron();
 	}else {
-		return randomAtom;
+		return [randomProton, randomElectron];
 	}
 };
 // the end of that function
