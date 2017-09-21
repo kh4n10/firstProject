@@ -11,6 +11,7 @@ Using the following:
 * Bootstrap (version 4)
 * JQuery
 * Javascript
+* GIT
 
 The aim of the project is to present a game of our chosing. The game must include:
 
@@ -31,6 +32,8 @@ To achieve the aims and objectives of this project, a small plan was devised whe
 * A timer
 * An area which displays the users final score
 * The top 3 high scores
+
+Regularly git commit and push the work done, with a minimum of 30 commits.
 
 
 ###The Game: ATOM

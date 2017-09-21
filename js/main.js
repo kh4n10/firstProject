@@ -229,5 +229,5 @@ $(function() {
 			return allScores.slice(0,3);
 		}
 	}
-// score function end
+	// score function end
 });
